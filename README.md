@@ -22,7 +22,7 @@ git地址：https://gitee.com/DimBottom/seata1.4.1-sample
 >
 > 实际上以及支持单个文件配置，详情见 Issue：https://github.com/seata/seata/issues/3482
 
-```json
+```nginx
 registry {
   type = "nacos"
   nacos {
