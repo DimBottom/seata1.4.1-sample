@@ -71,7 +71,6 @@ store.db.user=root
 store.db.password=root
 store.db.minConn=5
 store.db.maxConn=30
-store.db.globalTable=global_table
 store.db.branchTable=branch_table
 store.db.queryLimit=100
 store.db.lockTable=lock_table
@@ -152,7 +151,7 @@ public void create(Order order) {
 }
 ```
 
-> 被调用的服务不需要该注解。
+> 被调用的服务不需要该注解，且`@Transactional`注解也不是必须的。
 
 ### 其他详情见 Sample
 

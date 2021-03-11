@@ -26,9 +26,6 @@ seata:
   enabled: true
   application-id: ${spring.application.name}
   tx-service-group: fsp_tx_group
-  service:
-    vgroup-mapping:
-      fsp_tx_group: default
   config:
     type: nacos
     nacos:
