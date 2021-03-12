@@ -21,7 +21,7 @@ git地址：https://gitee.com/DimBottom/seata1.4.1-sample
 
 > 目前官网文档仅告知以 shell 的形式注入配置至 Nacos。
 >
-> 实际上以及支持单个文件配置，详情见 Issue：https://github.com/seata/seata/issues/3482
+> 实际上已经支持单个文件配置，详情见 Issue：https://github.com/seata/seata/issues/3482
 
 ```nginx
 registry {
