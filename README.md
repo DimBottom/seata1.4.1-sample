@@ -4,7 +4,8 @@
 
 git地址：https://gitee.com/DimBottom/seata1.4.1-sample
 
-本实例提供 Seata 1.4.1 Nacos 的使用方法，借鉴[《使用Seata彻底解决Spring Cloud中的分布式事务问题！》]( https://juejin.cn/post/6844904001528397831)  该篇博客，该博客使用的是 0.9.0，部分配置不同，sample 项目使用其提供的代码。
+本实例提供 Seata 1.4.1 Nacos 的使用方法，借鉴[《使用Seata彻底解决Spring Cloud中的分布式事务问题！》]( https://juejin.cn/post/6844904001528397831)
+该篇博客，该博客使用的是 0.9.0，部分配置不同，sample 项目使用其提供的代码。
 
 > 当然也参考了其他诸多博客以及官方文档（博客）。
 
@@ -98,6 +99,7 @@ sql 见：https://github.com/seata/seata/tree/develop/script/server/db 文件夹
 推荐使用`spring-cloud-starter-alibaba-seata`进行依赖导入。
 
 ```xml
+
 <dependency>
     <groupId>com.alibaba.cloud</groupId>
     <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
@@ -108,6 +110,15 @@ sql 见：https://github.com/seata/seata/tree/develop/script/server/db 文件夹
 Sample 中版本号是由`spring-cloud-alibaba-dependencies`控制的。
 
 > 早期版本的配置和本 Sample 的格式有所区别。
+>
+> 如果使用的是 2020.0.x 的 SpringCloud，则使用 `seata-spring-boot-starter` 导入依赖，因为 openfeign:3.0.x 的缘故导致类缺失。
+> ```xml
+> <dependency>
+>    <groupId>io.seata</groupId>
+>    <artifactId>seata-spring-boot-starter</artifactId>
+> </dependency>
+> ```
+> 参考 seata-storage-service 的 pom 中配置。
 
 ### application.yaml配置
 
@@ -147,8 +158,8 @@ sql 见：https://github.com/seata/seata/tree/develop/script/client/at/db 文件
 
 ```java
 @GlobalTransactional(name = "fsp-create-order", rollbackFor = Exception.class)
-public void create(Order order) {
-}
+public void create(Order order){
+        }
 ```
 
 > 被调用的服务不需要该注解，且`@Transactional`注解也不是必须的。
