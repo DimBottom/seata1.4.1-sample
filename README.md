@@ -86,7 +86,7 @@ store.db.maxWait=5000
 
 sql 见：https://github.com/seata/seata/tree/develop/script/server/db 文件夹。
 
-> 大部分脚本都可以在 scriopt 中找到。
+> 大部分脚本都可以在 script 中找到。
 
 ### 启动
 
